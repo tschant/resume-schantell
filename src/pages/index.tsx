@@ -6,7 +6,7 @@ import CommandPrompt from "@/components/CommandPrompt";
 import CommandOutput from "@/components/CommandOutput";
 
 export default function Home() {
-	const [commands, setCommands] = useState(["cat intro.txt", "ls", "cat contact.txt", "cat work.txt", "cat education.txt", "help"]);
+	const [commands, setCommands] = useState(["cat intro.txt", "ls", "cat education.txt", "cat work.txt", "cat contact.txt", "help"]);
 	const now = new Date();
 	const options = {
 		weekday: "short", year: "numeric", month: "short",
@@ -31,7 +31,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className="min-h-screen overflow-y-hidden relative">
-				<div className="mx-auto max-w-xl rounded border border-gray-700 bg-gray-900 font-mono text-xs leading-snug text-gray-300 shadow-xl md:my-3" >
+				<div className="mx-auto max-w-3xl rounded border border-gray-700 bg-gray-900 font-mono text-s leading-snug text-gray-300 shadow-xl md:my-3" >
 					<TerminalHeader></TerminalHeader>
 
 					<div className="px-2">
