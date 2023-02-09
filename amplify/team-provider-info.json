@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-resumeschantell-dev-194727-authRole",
+      "UnauthRoleArn": "arn:aws:iam::191847659339:role/amplify-resumeschantell-dev-194727-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::191847659339:role/amplify-resumeschantell-dev-194727-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-resumeschantell-dev-194727-deployment",
+      "UnauthRoleName": "amplify-resumeschantell-dev-194727-unauthRole",
+      "StackName": "amplify-resumeschantell-dev-194727",
+      "StackId": "arn:aws:cloudformation:us-east-1:191847659339:stack/amplify-resumeschantell-dev-194727/b5a69510-a81b-11ed-8e1b-0e6298dd632f",
+      "AmplifyAppId": "d3mqdugvecd32e"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}
