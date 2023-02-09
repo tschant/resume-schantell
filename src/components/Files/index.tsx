@@ -5,12 +5,12 @@ type Files = {
 };
 
 export const files: Files = {
-	'intro.txt': (<div>
+	"intro.txt": (<div>
 		This is a passion project I did for fun.<br/>
 		I wanted to create a resume page and wanted it to be unique to me...<br/>
 		This is the result
 	</div>),
-	'contact.txt': (<div>
+	"contact.txt": (<div>
 		<div>Tarryn Schantell</div>
 		<div>
 			<span className="text-yellow-200">Location: </span>
@@ -29,7 +29,7 @@ export const files: Files = {
 			<a className="underline" href="https://github.com/tschant" target="_blank" rel="noreferrer nofollow">@tschant</a>
 		</div>
 	</div>),
-	'work.txt': (<div>
+	"work.txt": (<div>
 		<div className="text-yellow-200">SparkPost (a MessageBird Company) - Staff Software Engineer</div>
 		<div>2016/02 - Present <span className="text-gray-500 italic ">(7 years)</span></div>
 		<div className="pl-4">
@@ -55,10 +55,10 @@ export const files: Files = {
 			<div>● Helped write an android application by designing various interfaces and writing functions to send and receive data from the database.</div>
 		</div>
 	</div>),
-	'education.txt': (<div>
+	"education.txt": (<div>
 		<div>B. S., Computer Engineering</div>
 		<div>School of Engineering, The University of Kansas</div>
 		<div>2011-2014</div>
 	</div>),
-	'skills.txt': (<div>TODO</div>),
+	"skills.txt": (<div>TODO</div>),
 };

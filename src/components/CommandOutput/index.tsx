@@ -1,20 +1,20 @@
-import parseCommand from '@/service/parseCommand';
-import {ReactNode, ReactElement, memo} from 'react';
+import parseCommand from "@/service/parseCommand";
+import {ReactNode, ReactElement, memo} from "react";
 type CommandOutputEl = string | ReactElement & ReactNode;
 
-import CommandHelp from '@/components/Commands/help';
-import CommandLs from '../Commands/ls';
-import CommandTodo from '../Commands/todo';
-import CommandCat from '../Commands/cat';
+import CommandHelp from "@/components/Commands/help";
+import CommandLs from "../Commands/ls";
+import CommandTodo from "../Commands/todo";
+import CommandCat from "../Commands/cat";
 
 const CommandOutput = memo(function CommandPrompt({command}: {command: string}) {
 	const commandToOutput = (command: string, pathOrFile?: string): CommandOutputEl => {
 		const commands: {[index: string]: CommandOutputEl} = {
 			help: (<CommandHelp/>),
 			ls: (<CommandLs path={pathOrFile}/>),
-			cat: (<CommandCat file={pathOrFile || 'contact.txt'}/>),
+			cat: (<CommandCat file={pathOrFile || "contact.txt"}/>),
 			todo: (<CommandTodo/>),
-			unknown: 'command not found: ',
+			unknown: "command not found: ",
 		};
 
 		if (!(command in commands)) {

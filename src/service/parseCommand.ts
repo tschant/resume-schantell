@@ -4,10 +4,10 @@ type Command = {
 };
 
 export default function parseCommand(command: string): Command {
-	const arrCommand = command.split(' ');
+	const arrCommand = command.split(" ");
 	if (arrCommand.length < 1) {
 		return {
-			command: 'unknown'
+			command: "unknown"
 		};
 	}
 

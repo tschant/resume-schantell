@@ -1,12 +1,12 @@
-import Head from 'next/head';
-import { useState } from 'react';
+import Head from "next/head";
+import { useState } from "react";
 
-import TerminalHeader from '@/components/TerminalHeader';
-import CommandPrompt from '@/components/CommandPrompt';
-import CommandOutput from '@/components/CommandOutput';
+import TerminalHeader from "@/components/TerminalHeader";
+import CommandPrompt from "@/components/CommandPrompt";
+import CommandOutput from "@/components/CommandOutput";
 
 export default function Home() {
-	const [commands, setCommands] = useState(['cat intro.txt', 'ls', 'cat contact.txt', 'cat work.txt', 'cat education.txt', 'help']);
+	const [commands, setCommands] = useState(["cat intro.txt", "ls", "cat contact.txt", "cat work.txt", "cat education.txt", "help"]);
 	const now = new Date();
 	const options = {
 		weekday: "short", year: "numeric", month: "short",
@@ -15,7 +15,7 @@ export default function Home() {
 	} as Intl.DateTimeFormatOptions;
 
 	const addCommand = (command: string) => {
-		if (command === 'clear') {
+		if (command === "clear") {
 			setCommands([]);
 		} else {
 			setCommands([...commands, command]);
@@ -37,7 +37,7 @@ export default function Home() {
 					<div className="px-2">
 						<div className="mb-4">
 							<span>Last login: </span>
-							<span id="datetime">{new Intl.DateTimeFormat('en-US', options).format(now)}</span>
+							<span id="datetime">{new Intl.DateTimeFormat("en-US", options).format(now)}</span>
 							<span> on ttys02</span>
 						</div>
 

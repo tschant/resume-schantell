@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import type {MutableRefObject} from "react";
 
 export default function CommandPrompt({setCommands}: {setCommands: Function}) {
-	const [inputText, setInputText] = useState('');
+	const [inputText, setInputText] = useState("");
 	const inputRef = useRef() as MutableRefObject<HTMLInputElement>;
 	const addCommandOutput = (e: any) => {
 		e.preventDefault();
 		setCommands(inputText);	
-		setInputText('');
+		setInputText("");
 	};
 
 	useEffect(() => {

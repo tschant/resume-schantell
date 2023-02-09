@@ -1,4 +1,4 @@
-import {files} from '@/components/Files';
+import {files} from "@/components/Files";
 export default function CommandLs({path}: {path?: string}) {
 	const availableFiles = Object.keys(files);
 	return (<span className="">
