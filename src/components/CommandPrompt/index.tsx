@@ -14,7 +14,7 @@ export default function CommandPrompt({setCommands}: {setCommands: Function}) {
 		inputRef?.current?.focus();
 	}, []); */
 
-	return <div>
+	return <div className="relative">
 		<div>
 			<span className="text-blue-200">~/dev/resume </span>
 			<span className="text-gray-500">main</span>
