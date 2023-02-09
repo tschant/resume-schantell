@@ -1,25 +1,30 @@
-import type {ReactNode, ReactElement} from 'react';
+import parseCommand from '@/service/parseCommand';
+import {ReactNode, ReactElement, memo} from 'react';
 type CommandOutputEl = string | ReactElement & ReactNode;
 
-const COMMAND_TO_OUTPUT: {[index: string]: CommandOutputEl} = {
-	help: (<ul>
-		<li>help: display this</li>
-		<li>ls: list files/sections</li>
-		<li>todo: display todo list</li>
-		<li>clear: clear screen</li>
-	</ul>),
-	ls: (<span className="text-red-300">List files here</span>),
-	todo: (<ul>
-		<li>actual commands + output</li>
-		<li>better command parsing</li>
-		<li>command with options (eg: ls -l)</li>
-		<li>tab complete</li>
-	</ul>),
-	unknown: 'Command unknown',
-};
+import CommandHelp from '@/components/Commands/help';
+import CommandLs from '../Commands/ls';
+import CommandTodo from '../Commands/todo';
+import CommandCat from '../Commands/cat';
 
-export default function CommandPrompt({command}: {command: string}) {
-	const output: CommandOutputEl = COMMAND_TO_OUTPUT[command] || COMMAND_TO_OUTPUT.unknown;
+const CommandOutput = memo(function CommandPrompt({command}: {command: string}) {
+	const commandToOutput = (command: string, pathOrFile?: string): CommandOutputEl => {
+		const commands: {[index: string]: CommandOutputEl} = {
+			help: (<CommandHelp/>),
+			ls: (<CommandLs path={pathOrFile}/>),
+			cat: (<CommandCat file={pathOrFile || 'contact.txt'}/>),
+			todo: (<CommandTodo/>),
+			unknown: 'command not found: ',
+		};
+
+		if (!(command in commands)) {
+			return commands.unknown + command;
+		}
+
+		return commands[command];
+	};
+	const parsedCommand = parseCommand(command);
+	const output: CommandOutputEl = commandToOutput(parsedCommand.command, parsedCommand.pathOrFile);
 
 	return <div className="mb-4">
 		<div>
@@ -31,4 +36,6 @@ export default function CommandPrompt({command}: {command: string}) {
 		</div>
 		<div className="mt-1">{output}</div>
 	</div>
-}
+});
+
+export default CommandOutput;

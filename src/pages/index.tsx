@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import styles from '@/styles/Home.module.css';
 import { useState } from 'react';
 
 import TerminalHeader from '@/components/TerminalHeader';
@@ -7,24 +6,20 @@ import CommandPrompt from '@/components/CommandPrompt';
 import CommandOutput from '@/components/CommandOutput';
 
 export default function Home() {
-	const [inputText, setInputText] = useState('');
-	const [commands, setCommands] = useState(['help', 'todo']);
+	const [commands, setCommands] = useState(['cat intro.txt', 'ls', 'cat contact.txt', 'cat work.txt', 'cat education.txt', 'help']);
 	const now = new Date();
 	const options = {
-		weekday: 'short', year: 'numeric', month: 'short',
-		hour: 'numeric', minute: 'numeric',
-		timeZoneName: 'short'
-	} as DateTimeFormat;
+		weekday: "short", year: "numeric", month: "short",
+		hour: "numeric", minute: "numeric",
+		timeZoneName: "short"
+	} as Intl.DateTimeFormatOptions;
 
-	const addCommandOutput = (e: any) => {
-		e.preventDefault();
-		if (inputText === 'clear') {
+	const addCommand = (command: string) => {
+		if (command === 'clear') {
 			setCommands([]);
 		} else {
-			setCommands([...commands, inputText]);
+			setCommands([...commands, command]);
 		}
-
-		setInputText('');
 	};
 
 	return (
@@ -35,8 +30,8 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className={styles.main}>
-				<div className="mx-auto max-w-xl rounded border border-gray-700 bg-gray-900 font-mono text-xs leading-snug text-gray-300 shadow-xl md:my-6 lg:my-10" >
+			<main className="min-h-screen overflow-y-hidden relative">
+				<div className="mx-auto max-w-xl rounded border border-gray-700 bg-gray-900 font-mono text-xs leading-snug text-gray-300 shadow-xl md:my-3" >
 					<TerminalHeader></TerminalHeader>
 
 					<div className="px-2">
@@ -46,13 +41,11 @@ export default function Home() {
 							<span> on ttys02</span>
 						</div>
 
-						{commands.map((command, index) => (<CommandOutput key={index} command={command}></CommandOutput>))}
+						<div>
+							{commands.map((command, index) => (<CommandOutput key={index} command={command}></CommandOutput>))}
+						</div>
 
-						<CommandPrompt inputText={inputText}>
-							<form onSubmit={addCommandOutput} className="inline absolute -top-4 opacity-0 w-full">
-								<input autoFocus className="mt-4 w-full" value={inputText} onChange={e => setInputText(e.target.value)} />
-							</form>
-						</CommandPrompt>
+						<CommandPrompt setCommands={(command: string) => addCommand(command)}></CommandPrompt>
 					</div>
 				</div>
 			</main>
