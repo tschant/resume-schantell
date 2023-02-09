@@ -43,16 +43,16 @@ export const files: Files = {
 		<div>2015/04 - 2016/02 <span className="text-gray-500 italic ">(10 months)</span></div>
 		<div className="pl-4">
 			<div>● Resolved critical issues in a timely manner prioritizing efficiency and responsiveness.</div>
-			<div>● Learned and aided in resolving tickets that caused outages for large companies in a minimal amount of time.</div>
+			<div>● Aided in resolving tickets that caused outages for enterprise companies in a minimal amount of time.</div>
 			<div>● Utilized knowledge of Linux, MySQL, and Java to aid developers in fixing flaws within the Guardium application and services.</div>
 		</div>
 		<div className="text-yellow-200">AllofE - Part Time Software Developer</div>
 		<div>2014/05 - 2015/04 <span className="text-gray-500 italic ">(11 months)</span></div>
 		<div className="pl-4">
-			<div>● Helped maintain multiple large scale websites.</div>
-			<div>● Designed front end user interface utilizing javascript and PHP</div>
-			<div>● Accessed data from a MySQL server using PHP and SQL.</div>
-			<div>● Helped write an android application by designing various interfaces and writing functions to send and receive data from the database.</div>
+			<div>● Helped maintain multiple enterprise scale websites.</div>
+			<div>● Designed front-end user interface utilizing JavaScript and PHP.</div>
+			<div>● Accessed data from a MySQL server using PHP and MySQL.</div>
+			<div>● Helped write an Android application by designing and implementing user interfaces to send and receive data from the database.</div>
 		</div>
 	</div>),
 	"education.txt": (<div>

@@ -10,9 +10,9 @@ export default function CommandPrompt({setCommands}: {setCommands: Function}) {
 		setInputText("");
 	};
 
-	useEffect(() => {
+	/* useEffect(() => {
 		inputRef?.current?.focus();
-	}, []);
+	}, []); */
 
 	return <div>
 		<div>
