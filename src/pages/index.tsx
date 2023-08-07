@@ -6,7 +6,7 @@ import CommandPrompt from "@/components/CommandPrompt";
 import CommandOutput from "@/components/CommandOutput";
 
 export default function Home() {
-	const [commands, setCommands] = useState(["help", "cat intro.txt", "ls", "cat education.txt", "cat work.txt", "cat contact.txt"]);
+	const [commands, setCommands] = useState(["cat intro.txt", "cat summary.txt", "cat contact.txt", "ls", "cat work.txt", "cat education.txt", "help"]);
 	const now = new Date();
 	const options = {
 		weekday: "short", year: "numeric", month: "short",
