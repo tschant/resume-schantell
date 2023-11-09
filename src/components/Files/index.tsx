@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
-type Files = {
+export interface Files {
 	[index: string]: ReactNode | string;
-};
+}
 
 export const files: Files = {
 	'intro.md': (

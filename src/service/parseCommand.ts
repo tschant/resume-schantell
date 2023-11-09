@@ -1,7 +1,7 @@
-type Command = {
+export interface Command {
 	command: string;
 	pathOrFile?: string;
-};
+}
 
 export default function parseCommand(command: string): Command {
 	const arrCommand = command.split(' ');
