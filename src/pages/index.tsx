@@ -1,21 +1,32 @@
-import Head from "next/head";
-import { useState } from "react";
+import Head from 'next/head';
+import { useState } from 'react';
 
-import TerminalHeader from "@/components/TerminalHeader";
-import CommandPrompt from "@/components/CommandPrompt";
-import CommandOutput from "@/components/CommandOutput";
+import TerminalHeader from '@/components/TerminalHeader';
+import CommandPrompt from '@/components/CommandPrompt';
+import CommandOutput from '@/components/CommandOutput';
 
 export default function Home() {
-	const [commands, setCommands] = useState(["cat intro.txt", "cat summary.txt", "cat contact.txt", "ls", "cat work.txt", "cat education.txt", "help"]);
+	const [commands, setCommands] = useState([
+		'cat intro.md',
+		'cat summary.md',
+		'cat contact.md',
+		'ls',
+		'cat work.md',
+		'cat education.md',
+		'help',
+	]);
 	const now = new Date();
 	const options = {
-		weekday: "short", year: "numeric", month: "short",
-		hour: "numeric", minute: "numeric",
-		timeZoneName: "short"
+		weekday: 'short',
+		year: 'numeric',
+		month: 'short',
+		hour: 'numeric',
+		minute: 'numeric',
+		timeZoneName: 'short',
 	} as Intl.DateTimeFormatOptions;
 
 	const addCommand = (command: string) => {
-		if (command === "clear") {
+		if (command === 'clear') {
 			setCommands([]);
 		} else {
 			setCommands([...commands, command]);
@@ -30,25 +41,31 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className="min-h-screen overflow-y-hidden relative">
-				<div className="mx-auto max-w-3xl rounded border border-gray-700 bg-gray-900 font-mono text-s leading-snug text-gray-300 shadow-xl md:my-3" >
+			<main className="relative min-h-screen overflow-y-hidden">
+				<div className="mx-auto max-w-3xl rounded border border-gray-700 bg-gray-900 font-mono leading-snug text-gray-300 shadow-xl md:my-3">
 					<TerminalHeader></TerminalHeader>
 
 					<div className="px-2">
 						<div className="mb-4">
 							<span>Last login: </span>
-							<span id="datetime">{new Intl.DateTimeFormat("en-US", options).format(now)}</span>
+							<span id="datetime">
+								{new Intl.DateTimeFormat('en-US', options).format(now)}
+							</span>
 							<span> on ttys02</span>
 						</div>
 
 						<div>
-							{commands.map((command, index) => (<CommandOutput key={index} command={command}></CommandOutput>))}
+							{commands.map((command, index) => (
+								<CommandOutput key={index} command={command}></CommandOutput>
+							))}
 						</div>
 
-						<CommandPrompt setCommands={(command: string) => addCommand(command)}></CommandPrompt>
+						<CommandPrompt
+							setCommands={(command: string) => addCommand(command)}
+						></CommandPrompt>
 					</div>
 				</div>
 			</main>
 		</>
-	)
+	);
 }
