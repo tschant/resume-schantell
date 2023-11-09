@@ -1,93 +1,69 @@
+import Link from 'next/link';
+
+const portfolio = [
+	{
+		link: 'https://resume.schantell.us/',
+		name: 'Resume',
+		description:
+			'This page! Fun side project to document work and learn new things.',
+		source: 'https://github.com/tschant/resume-schantell',
+		techStack: 'Next.js, React, TailwindCSS, AWS Amplify',
+	},
+	{
+		link: 'https://pokedex.schantell.us/',
+		name: 'Pokédex',
+		description: 'Side project to learn GraphQL, Next.js, React.',
+		source: 'https://github.com/tschant/pokedex',
+		techStack: 'Next.js, GraphQL/Apollo, React, TailwindCSS, Docker',
+	},
+	{
+		link: 'https://wedding.schantell.us/',
+		name: 'Wedding',
+		description:
+			'Quick & simple wedding website (updated removing some pages).',
+		source: '',
+		techStack: 'Remix, React, TailwindCSS, Docker',
+	},
+	{
+		link: 'https://github.com/tschant/weekly-meal-plan',
+		name: 'Weekly Meal Plan',
+		description:
+			'Hacked together tool for wife and I to plan meals from a Google Sheet of recipes',
+		source: 'https://github.com/tschant/weekly-meal-plan',
+		techStack: 'node.js, chalk + meow, Google Spreadsheet',
+	},
+	{
+		link: 'https://resume.schantell.us/',
+		name: 'D&D Dice Roller',
+		description:
+			'I love D&D, but always forget my dice (not my computer), this was my solution',
+		source: 'https://github.com/tschant/node-die-roller',
+		techStack: 'node.js, chalk + meow, Google Spreadsheet',
+	},
+];
+
 export function Portfolio() {
 	return (
 		<div>
 			<ul className="list-disc pl-4">
-				<li>
-					<a
-						className="underline"
-						href="//pokedex.schantell.us/"
-						target="_blank"
-						rel="noreferrer nofollow"
-					>
-						Pokédex
-					</a>
-					: Side project to learn GraphQL, Next.js, React.
-					<div className="pl-4">
-						<a
-							className="underline"
-							href="//github.com/tschant/pokedex"
-							target="_blank"
-							rel="noreferrer nofollow"
-						>
-							Source
-						</a>
-						: Next.js, GraphQL/Apollo, React, TailwindCSS, Docker
-					</div>
-				</li>
-				<li>
-					<a
-						className="underline"
-						href="//wedding.schantell.us/"
-						target="_blank"
-						rel="noreferrer nofollow"
-					>
-						Wedding
-					</a>
-					: Quick & simple wedding website (updated removing some pages).
-					<div className="pl-4">Tech: Remix, React, TailwindCSS, Docker</div>
-				</li>
-				<li>
-					<a
-						className="underline"
-						href="//resume.schantell.us/"
-						target="_blank"
-						rel="noreferrer nofollow"
-					>
-						Resume
-					</a>
-					: This page! Fun side project to document work and learn new things.
-					<div className="pl-4">
-						<a
-							className="underline"
-							href="//github.com/tschant/resume-schantell"
-							target="_blank"
-							rel="noreferrer nofollow"
-						>
-							Source
-						</a>
-						: Next.js, React, TailwindCSS, AWS Amplify
-					</div>
-				</li>
-				<li>
-					<a
-						className="underline"
-						href="//github.com/tschant/weekly-meal-plan"
-						target="_blank"
-						rel="noreferrer nofollow"
-					>
-						Weekly Meal Plan
-					</a>
-					: Hacked together tool for wife and I to plan meals from a Google
-					Sheet of recipes
-					<div className="pl-4">
-						Tech: node.js, chalk + meow, Google Spreadsheet
-					</div>
-				</li>
-				<li>
-					<a
-						className="underline"
-						href="//github.com/tschant/node-die-roller"
-						target="_blank"
-						rel="noreferrer nofollow"
-					>
-						D&D Dice Roller
-					</a>
-					: I love D&D, but always forget my dice (not my computer), this was
-					the result
-					<div className="pl-4">
-						Tech: node.js, chalk + meow, Google Spreadsheet
-					</div>
-				</li>
+				{portfolio.map((item) => (
+					<li key={item.name}>
+						<Link className="underline" href={item.link} target="_blank">
+							{item.name}
+						</Link>
+						: {item.description}
+						<div className="pl-4">
+							{item.source ? (
+								<Link className="underline" href={item.source} target="_blank">
+									Source Code
+								</Link>
+							) : (
+								<span>Tech Stack</span>
+							)}
+							: {item.techStack}
+						</div>
+					</li>
+				))}
 			</ul>
 		</div>
 	);

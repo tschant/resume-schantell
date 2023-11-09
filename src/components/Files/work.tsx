@@ -2,7 +2,7 @@ export function Work() {
 	return (
 		<div>
 			<div className="text-yellow-200">
-				SparkPost (a MessageBird Company) - Staff Software Engineer
+				MessageBird - Staff Software Engineer
 			</div>
 			<div>
 				2016/02 - Present{' '}
