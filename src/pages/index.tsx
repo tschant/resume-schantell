@@ -12,7 +12,8 @@ export default function Home() {
 		'cat contact.md',
 		'ls',
 		'cat work.md',
-		'cat education.md',
+		'cat portfolio.md',
+		'cat skills.md',
 		'help',
 	]);
 	const now = new Date();
