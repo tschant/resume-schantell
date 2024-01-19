@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "resumeschantell_identitypool_8e369451",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "resumeschantell",
+    "sharedId": "8e369451",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
+  }
+}

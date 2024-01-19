@@ -1,3 +1,4 @@
+import { recordLinkClick } from '@/service/recordLinkClick';
 export function Contact() {
 	return (
 		<div>
@@ -13,6 +14,7 @@ export function Contact() {
 					href="mailto:tarryn@schantell.us"
 					target="_blank"
 					rel="noreferrer nofollow"
+					onClick={() => recordLinkClick('email')}
 				>
 					tarryn@schantell.us
 				</a>
@@ -24,6 +26,7 @@ export function Contact() {
 					href="https://www.linkedin.com/in/tschante/"
 					target="_blank"
 					rel="noreferrer nofollow"
+					onClick={() => recordLinkClick('linkedin')}
 				>
 					@tschante
 				</a>
@@ -35,6 +38,7 @@ export function Contact() {
 					href="https://github.com/tschant"
 					target="_blank"
 					rel="noreferrer nofollow"
+					onClick={() => recordLinkClick('github')}
 				>
 					@tschant
 				</a>

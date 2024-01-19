@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { record } from 'aws-amplify/analytics';
 
 export default function CommandPrompt({
 	setCommands,
@@ -8,6 +9,12 @@ export default function CommandPrompt({
 	const [inputText, setInputText] = useState('');
 	const addCommandOutput = (e: any) => {
 		e.preventDefault();
+		record({
+			name: 'Command',
+			attributes: {
+				name: inputText,
+			},
+		});
 		setCommands(inputText);
 		setInputText('');
 	};

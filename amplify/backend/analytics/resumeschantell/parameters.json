@@ -1,0 +1,21 @@
+{
+    "appName": "resumeschantell",
+    "roleName": "pinpointLambdaRole4441da26",
+    "cloudformationPolicyName": "cloudformationPolicy4441da26",
+    "cloudWatchPolicyName": "cloudWatchPolicy4441da26",
+    "pinpointPolicyName": "pinpointPolicy4441da26",
+    "authPolicyName": "pinpoint_amplify_4441da26",
+    "unauthPolicyName": "pinpoint_amplify_4441da26",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

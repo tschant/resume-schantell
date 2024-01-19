@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { recordLinkClick } from '@/service/recordLinkClick';
 
 const portfolio = [
 	{
@@ -48,13 +49,13 @@ export function Portfolio() {
 			<ul className="list-disc pl-4">
 				{portfolio.map((item) => (
 					<li key={item.name}>
-						<Link className="underline" href={item.link} target="_blank">
+						<Link className="underline" href={item.link} target="_blank" onClick={() => recordLinkClick(item.name)}>
 							{item.name}
 						</Link>
 						: {item.description}
 						<div className="pl-4">
 							{item.source ? (
-								<Link className="underline" href={item.source} target="_blank">
+								<Link className="underline" href={item.source} target="_blank" onClick={() => recordLinkClick(`Source Code ${item.name}`)}>
 									Source Code
 								</Link>
 							) : (

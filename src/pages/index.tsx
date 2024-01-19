@@ -5,6 +5,12 @@ import TerminalHeader from '@/components/TerminalHeader';
 import CommandPrompt from '@/components/CommandPrompt';
 import CommandOutput from '@/components/CommandOutput';
 
+import { configureAutoTrack } from 'aws-amplify/analytics';
+configureAutoTrack({
+	enable: true,
+	type: 'pageView',
+});
+
 export default function Home() {
 	const [commands, setCommands] = useState([
 		'cat intro.md',
