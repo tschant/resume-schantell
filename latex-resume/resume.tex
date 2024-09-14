@@ -1,0 +1,51 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+\documentclass[]{awesomecv}
+\usepackage{textcomp}
+%%% Override a directory location for fonts(default: 'fonts/')
+\fontdir[fonts/]
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{resume/}
+\colorlet{awesome}{awesome-red}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Variables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\name{Tarryn}{Schantell}
+\position{Staff Software Engineer}
+\mobile{+1 913-461-8088}
+\email{tarryn@schantell.us}
+\link{resume.schantell.us}
+\github{tschant}
+\linkedin{tschante}
+
+\begin{document}
+\makecvheader
+\input{sections/summary.tex}
+\input{sections/experience.tex}
+\input{sections/skills.tex}
+\input{sections/projects.tex}
+\input{sections/education.tex}
+\vspace{-2mm}
+
+\ 
+\end{document}
